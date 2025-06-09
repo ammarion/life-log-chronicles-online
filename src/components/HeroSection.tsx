@@ -8,15 +8,15 @@ export const HeroSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl md:text-7xl font-playfair font-bold text-gray-900 mb-6 animate-fade-in">
-            Welcome to My
+            Welcome to
             <span className="block bg-gradient-to-r from-rose-500 to-orange-500 bg-clip-text text-transparent">
-              Life Chronicles
+              Ammar's Chronicles
             </span>
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto font-inter leading-relaxed animate-fade-in" style={{animationDelay: '0.2s'}}>
-            Join me on this beautiful journey as I share stories, insights, and moments that shape my world. 
-            From daily adventures to life lessons, this is where authenticity meets inspiration.
+            Join me as I share insights from the intersection of technology, security, and life. 
+            From cloud architecture to personal growth, this is where engineering meets human experience.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{animationDelay: '0.4s'}}>

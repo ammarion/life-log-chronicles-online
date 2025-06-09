@@ -6,31 +6,31 @@ import { Calendar, Clock } from "lucide-react";
 const featuredPosts = [
   {
     id: 1,
-    title: "Finding Joy in the Small Moments",
-    excerpt: "Sometimes the most profound happiness comes from the simplest experiences. Today I want to share how I've learned to appreciate the little things that make life beautiful.",
-    category: "Lifestyle",
+    title: "Architecting Security in the Cloud: Lessons from AWS",
+    excerpt: "How I've learned to build security into cloud infrastructure from the ground up, sharing insights from managing security at scale across hundreds of AWS accounts.",
+    category: "Cloud Security",
     date: "Dec 15, 2024",
-    readTime: "5 min read",
-    image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&h=600&fit=crop",
+    readTime: "8 min read",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop",
     featured: true
   },
   {
     id: 2,
-    title: "My Morning Routine That Changed Everything",
-    excerpt: "How a simple shift in my morning habits transformed my entire day and helped me become more focused and intentional.",
-    category: "Personal Growth",
+    title: "From Engineer to Manager: Leading Security Teams",
+    excerpt: "The journey from hands-on security engineering to leading product security teams at Adobe. What I learned about balancing technical depth with people leadership.",
+    category: "Leadership",
     date: "Dec 12, 2024",
-    readTime: "7 min read",
-    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&h=600&fit=crop"
+    readTime: "6 min read",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop"
   },
   {
     id: 3,
-    title: "Lessons from a Digital Detox Weekend",
-    excerpt: "What I learned when I decided to disconnect from all devices for 48 hours and reconnect with the world around me.",
-    category: "Mindfulness",
+    title: "Building a WAF Program: Defense in Depth",
+    excerpt: "How we implemented a comprehensive Web Application Firewall strategy across Adobe's infrastructure, lessons learned and challenges overcome.",
+    category: "DevSecOps",
     date: "Dec 10, 2024",
-    readTime: "4 min read",
-    image: "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&h=600&fit=crop"
+    readTime: "7 min read",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop"
   }
 ];
 
