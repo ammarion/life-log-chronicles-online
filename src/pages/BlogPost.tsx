@@ -1,9 +1,16 @@
 import { useParams, Link } from "react-router-dom";
+import { BlogHeader } from "@/components/BlogHeader";
+import { BlogFooter } from "@/components/BlogFooter";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft, Calendar, Clock, Share2 } from "lucide-react";
+import { useEffect } from "react";
 
 const blogPosts = {
   "aws-security-architecture": {
     title: "Architecting Security in the Cloud: Lessons from AWS",
     date: "2025-06-09",
+    readTime: "8 min read",
+    category: "Cloud Security",
     content: (
       <>
         <p className="text-lg mb-6">
@@ -56,6 +63,8 @@ const blogPosts = {
   "engineering-to-management": {
     title: "From Engineer to Manager: Leading Security Teams",
     date: "2025-06-08",
+    readTime: "6 min read",
+    category: "Leadership",
     content: (
       <>
         <p className="text-lg mb-6">
@@ -112,6 +121,8 @@ const blogPosts = {
   "waf-program-implementation": {
     title: "Building a WAF Program: Defense in Depth",
     date: "2025-06-07",
+    readTime: "7 min read",
+    category: "DevSecOps",
     content: (
       <>
         <p className="text-lg mb-6">
@@ -177,39 +188,112 @@ export const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
   const post = slug ? blogPosts[slug as keyof typeof blogPosts] : null;
 
+  useEffect(() => {
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
+  }, [slug]);
+
+  const handleShare = () => {
+    if (navigator.share) {
+      navigator.share({
+        title: post?.title,
+        url: window.location.href,
+      }).catch((error) => console.log('Error sharing', error));
+    } else {
+      navigator.clipboard.writeText(window.location.href);
+      alert('Link copied to clipboard!');
+    }
+  };
+
   if (!post) {
     return (
       <div className="min-h-screen bg-white">
+        <BlogHeader />
         <div className="container mx-auto px-4 py-20">
           <div className="max-w-2xl mx-auto">
             <h1 className="text-3xl font-bold mb-4">Post Not Found</h1>
-            <Link to="/" className="text-blue-600 hover:underline">
-              ← Back to Home
+            <p className="text-gray-600 mb-6">The article you're looking for doesn't exist or has been moved.</p>
+            <Link to="/">
+              <Button variant="default" className="bg-gradient-to-r from-rose-500 to-orange-500">
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                Back to Home
+              </Button>
             </Link>
           </div>
         </div>
+        <BlogFooter />
       </div>
     );
   }
 
   return (
     <div className="min-h-screen bg-white">
-      <div className="container mx-auto px-4 py-20">
-        <div className="max-w-2xl mx-auto">
-          <Link to="/" className="text-blue-600 hover:underline mb-8 block">
-            ← Back to Home
+      <BlogHeader />
+      <div className="container mx-auto px-4 py-12">
+        <div className="max-w-3xl mx-auto">
+          <Link to="/" className="inline-flex items-center text-rose-600 hover:text-rose-800 transition-colors mb-8 group">
+            <ArrowLeft className="mr-2 h-4 w-4 group-hover:-translate-x-1 transition-transform" />
+            Back to Home
           </Link>
           
-          <article className="prose prose-lg max-w-none">
-            <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
-            <p className="text-gray-600 mb-8">{post.date}</p>
+          <article>
+            <header className="mb-10">
+              <div className="inline-block px-3 py-1 mb-4 text-sm font-medium text-white bg-gradient-to-r from-rose-500 to-orange-500 rounded-full">
+                {post.category}
+              </div>
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 font-playfair">{post.title}</h1>
+              
+              <div className="flex items-center text-gray-600 text-sm mb-6">
+                <div className="flex items-center mr-6">
+                  <Calendar className="w-4 h-4 mr-1" />
+                  <span>{post.date}</span>
+                </div>
+                <div className="flex items-center">
+                  <Clock className="w-4 h-4 mr-1" />
+                  <span>{post.readTime}</span>
+                </div>
+              </div>
+              
+              <Button 
+                variant="outline" 
+                size="sm" 
+                className="flex items-center text-gray-600 hover:text-rose-600 transition-colors"
+                onClick={handleShare}
+              >
+                <Share2 className="w-4 h-4 mr-2" />
+                Share Article
+              </Button>
+            </header>
             
-            <div className="prose prose-lg max-w-none">
+            <div className="prose prose-lg max-w-none prose-headings:font-playfair prose-headings:font-bold prose-a:text-rose-600">
               {post.content}
             </div>
           </article>
+          
+          <div className="border-t border-gray-200 mt-16 pt-8">
+            <h3 className="text-2xl font-bold mb-6 font-playfair">Continue Reading</h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              {Object.entries(blogPosts)
+                .filter(([key]) => key !== slug)
+                .slice(0, 2)
+                .map(([key, relatedPost]) => (
+                  <Link 
+                    key={key} 
+                    to={`/post/${key}`}
+                    className="block p-6 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow"
+                  >
+                    <h4 className="font-bold text-lg mb-2 line-clamp-2">{relatedPost.title}</h4>
+                    <div className="flex items-center text-gray-600 text-sm">
+                      <Calendar className="w-3 h-3 mr-1" />
+                      <span>{relatedPost.date}</span>
+                    </div>
+                  </Link>
+                ))}
+            </div>
+          </div>
         </div>
       </div>
+      <BlogFooter />
     </div>
   );
 };

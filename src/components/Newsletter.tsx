@@ -8,21 +8,28 @@ import { useToast } from "@/hooks/use-toast";
 
 export const Newsletter = () => {
   const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (email) {
-      toast({
-        title: "Thank you for subscribing!",
-        description: "You'll receive updates about new posts and stories.",
-      });
-      setEmail("");
+      setIsSubmitting(true);
+      
+      // Simulate API call with timeout
+      setTimeout(() => {
+        toast({
+          title: "Thank you for subscribing!",
+          description: "You'll receive updates about new posts and stories.",
+        });
+        setEmail("");
+        setIsSubmitting(false);
+      }, 800);
     }
   };
 
   return (
-    <section className="py-20 bg-gradient-to-r from-rose-500 to-orange-500">
+    <section className="py-20 bg-gradient-to-r from-rose-500 to-orange-500" id="contact">
       <div className="container mx-auto px-4">
         <Card className="max-w-2xl mx-auto bg-white/95 backdrop-blur-sm shadow-2xl animate-fade-in">
           <CardContent className="p-8 text-center">
@@ -46,13 +53,15 @@ export const Newsletter = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="flex-1 font-inter"
+                disabled={isSubmitting}
                 required
               />
               <Button 
                 type="submit" 
                 className="bg-gradient-to-r from-rose-500 to-orange-500 hover:from-rose-600 hover:to-orange-600 text-white font-inter"
+                disabled={isSubmitting}
               >
-                Subscribe
+                {isSubmitting ? "Subscribing..." : "Subscribe"}
               </Button>
             </form>
             

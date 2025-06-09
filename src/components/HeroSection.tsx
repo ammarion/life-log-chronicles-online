@@ -1,10 +1,18 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const HeroSection = () => {
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section className="bg-gradient-to-br from-rose-50 via-orange-50 to-amber-50 py-20 lg:py-28">
+    <section className="bg-gradient-to-br from-rose-50 via-orange-50 to-amber-50 py-20 lg:py-28" id="home">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl md:text-7xl font-playfair font-bold text-gray-900 mb-6 animate-fade-in">
@@ -20,11 +28,20 @@ export const HeroSection = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{animationDelay: '0.4s'}}>
-            <Button size="lg" className="bg-gradient-to-r from-rose-500 to-orange-500 hover:from-rose-600 hover:to-orange-600 text-white font-inter">
+            <Button 
+              size="lg" 
+              className="bg-gradient-to-r from-rose-500 to-orange-500 hover:from-rose-600 hover:to-orange-600 text-white font-inter"
+              onClick={() => scrollToSection('posts')}
+            >
               Start Reading
               <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
-            <Button variant="outline" size="lg" className="font-inter">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="font-inter"
+              onClick={() => scrollToSection('about')}
+            >
               About Me
             </Button>
           </div>
