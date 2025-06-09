@@ -2,6 +2,7 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const featuredPosts = [
   {
@@ -12,7 +13,8 @@ const featuredPosts = [
     date: "Dec 15, 2024",
     readTime: "8 min read",
     image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop",
-    featured: true
+    featured: true,
+    slug: "aws-security-architecture"
   },
   {
     id: 2,
@@ -21,7 +23,8 @@ const featuredPosts = [
     category: "Leadership",
     date: "Dec 12, 2024",
     readTime: "6 min read",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop"
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop",
+    slug: "engineering-to-management"
   },
   {
     id: 3,
@@ -30,7 +33,8 @@ const featuredPosts = [
     category: "DevSecOps",
     date: "Dec 10, 2024",
     readTime: "7 min read",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop"
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop",
+    slug: "waf-program-implementation"
   }
 ];
 
@@ -49,13 +53,13 @@ export const FeaturedPosts = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {featuredPosts.map((post, index) => (
-            <Card 
-              key={post.id} 
-              className={`group cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in ${
-                post.featured ? 'md:col-span-2 lg:col-span-1' : ''
-              }`}
-              style={{animationDelay: `${index * 0.1}s`}}
-            >
+            <Link key={post.id} to={`/post/${post.slug}`}>
+              <Card 
+                className={`group cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in ${
+                  post.featured ? 'md:col-span-2 lg:col-span-1' : ''
+                }`}
+                style={{animationDelay: `${index * 0.1}s`}}
+              >
               <div className="aspect-video overflow-hidden rounded-t-lg">
                 <img 
                   src={post.image} 
@@ -96,6 +100,7 @@ export const FeaturedPosts = () => {
                 </div>
               </CardContent>
             </Card>
+            </Link>
           ))}
         </div>
       </div>
