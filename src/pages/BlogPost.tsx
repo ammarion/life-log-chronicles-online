@@ -4,135 +4,172 @@ const blogPosts = {
   "aws-security-architecture": {
     title: "Architecting Security in the Cloud: Lessons from AWS",
     date: "2025-06-09",
-    content: `
-# Architecting Security in the Cloud: Lessons from AWS
+    content: (
+      <>
+        <p className="text-lg mb-6">
+          After managing security across hundreds of AWS accounts at Adobe, I've learned that cloud security isn't just about tools—it's about building security into the fabric of your infrastructure.
+        </p>
 
-After managing security across hundreds of AWS accounts at Adobe, I've learned that cloud security isn't just about tools—it's about building security into the fabric of your infrastructure.
+        <h2 className="text-2xl font-semibold mt-8 mb-4">The Foundation: Defense in Depth</h2>
+        <p className="mb-4">
+          Security architecture in the cloud starts with layered defenses:
+        </p>
+        <ul className="list-disc ml-6 mb-6 space-y-2">
+          <li><strong>Account Isolation</strong>: Separate environments with distinct AWS accounts</li>
+          <li><strong>Network Segmentation</strong>: VPCs, subnets, and security groups</li>
+          <li><strong>Identity Controls</strong>: IAM policies with least privilege</li>
+          <li><strong>Data Protection</strong>: Encryption at rest and in transit</li>
+        </ul>
 
-## The Foundation: Defense in Depth
+        <h2 className="text-2xl font-semibold mt-8 mb-4">Key Lessons Learned</h2>
+        
+        <h3 className="text-xl font-medium mt-6 mb-3">1. Automate Everything</h3>
+        <p className="mb-4">
+          Manual security processes don't scale. Infrastructure as Code (IaC) with security guardrails built-in is essential.
+        </p>
 
-Security architecture in the cloud starts with layered defenses:
+        <h3 className="text-xl font-medium mt-6 mb-3">2. Monitor Continuously</h3>
+        <p className="mb-4">
+          CloudTrail, GuardDuty, and Security Hub provide the visibility needed to detect and respond to threats.
+        </p>
 
-1. **Account Isolation**: Separate environments with distinct AWS accounts
-2. **Network Segmentation**: VPCs, subnets, and security groups
-3. **Identity Controls**: IAM policies with least privilege
-4. **Data Protection**: Encryption at rest and in transit
+        <h3 className="text-xl font-medium mt-6 mb-3">3. Shift Left</h3>
+        <p className="mb-4">
+          Security decisions made during architecture design are 10x more effective than retrofitting later.
+        </p>
 
-## Key Lessons Learned
+        <h2 className="text-2xl font-semibold mt-8 mb-4">Practical Implementation</h2>
+        <p className="mb-4">
+          At Adobe, we implemented a centralized security model using AWS Organizations and Control Tower, with automated compliance checking through Config Rules.
+        </p>
+        <p className="mb-4">
+          The result? Consistent security posture across all environments and faster deployment of secure infrastructure.
+        </p>
 
-### 1. Automate Everything
-Manual security processes don't scale. Infrastructure as Code (IaC) with security guardrails built-in is essential.
-
-### 2. Monitor Continuously
-CloudTrail, GuardDuty, and Security Hub provide the visibility needed to detect and respond to threats.
-
-### 3. Shift Left
-Security decisions made during architecture design are 10x more effective than retrofitting later.
-
-## Practical Implementation
-
-At Adobe, we implemented a centralized security model using AWS Organizations and Control Tower, with automated compliance checking through Config Rules.
-
-The result? Consistent security posture across all environments and faster deployment of secure infrastructure.
-
-## Conclusion
-
-Cloud security architecture is about enabling business velocity while maintaining strong security posture. The key is building security into your processes, not bolting it on afterwards.
-    `
+        <h2 className="text-2xl font-semibold mt-8 mb-4">Conclusion</h2>
+        <p className="mb-4">
+          Cloud security architecture is about enabling business velocity while maintaining strong security posture. The key is building security into your processes, not bolting it on afterwards.
+        </p>
+      </>
+    )
   },
   "engineering-to-management": {
     title: "From Engineer to Manager: Leading Security Teams",
     date: "2025-06-08",
-    content: `
-# From Engineer to Manager: Leading Security Teams
+    content: (
+      <>
+        <p className="text-lg mb-6">
+          The transition from hands-on security engineering to leading teams is one of the most challenging career moves in tech. Here's what I learned during my journey at Adobe.
+        </p>
 
-The transition from hands-on security engineering to leading teams is one of the most challenging career moves in tech. Here's what I learned during my journey at Adobe.
+        <h2 className="text-2xl font-semibold mt-8 mb-4">The Mindset Shift</h2>
+        <p className="mb-4">
+          As an engineer, success is measured by code quality, system reliability, and technical depth. As a manager, success is measured by team productivity, career growth, and strategic impact.
+        </p>
 
-## The Mindset Shift
+        <h3 className="text-xl font-medium mt-6 mb-3">From Doing to Enabling</h3>
+        <p className="mb-4">The hardest part was letting go of the keyboard. Your job becomes:</p>
+        <ul className="list-disc ml-6 mb-6 space-y-2">
+          <li>Removing blockers for your team</li>
+          <li>Providing technical direction without micromanaging</li>
+          <li>Translating business needs into technical requirements</li>
+        </ul>
 
-As an engineer, success is measured by code quality, system reliability, and technical depth. As a manager, success is measured by team productivity, career growth, and strategic impact.
+        <h2 className="text-2xl font-semibold mt-8 mb-4">Key Leadership Principles</h2>
 
-### From Doing to Enabling
+        <h3 className="text-xl font-medium mt-6 mb-3">1. Technical Credibility Matters</h3>
+        <p className="mb-4">
+          In security, your team needs to trust your technical judgment. Stay close enough to the technology to provide meaningful guidance.
+        </p>
 
-The hardest part was letting go of the keyboard. Your job becomes:
-- Removing blockers for your team
-- Providing technical direction without micromanaging
-- Translating business needs into technical requirements
+        <h3 className="text-xl font-medium mt-6 mb-3">2. Invest in Your People</h3>
+        <p className="mb-4">Your team's growth is your growth. Spend time on:</p>
+        <ul className="list-disc ml-6 mb-6 space-y-2">
+          <li>Career development conversations</li>
+          <li>Technical mentoring</li>
+          <li>Stretch assignments</li>
+        </ul>
 
-## Key Leadership Principles
+        <h3 className="text-xl font-medium mt-6 mb-3">3. Bridge Technical and Business</h3>
+        <p className="mb-4">
+          Security leaders must translate risk into business language and business requirements into technical solutions.
+        </p>
 
-### 1. Technical Credibility Matters
-In security, your team needs to trust your technical judgment. Stay close enough to the technology to provide meaningful guidance.
+        <h2 className="text-2xl font-semibold mt-8 mb-4">Common Pitfalls</h2>
+        <ul className="list-disc ml-6 mb-6 space-y-2">
+          <li><strong>Staying too technical</strong>: Getting pulled back into implementation</li>
+          <li><strong>Over-delegating</strong>: Losing touch with the technical reality</li>
+          <li><strong>Analysis paralysis</strong>: Overthinking decisions that should be made quickly</li>
+        </ul>
 
-### 2. Invest in Your People
-Your team's growth is your growth. Spend time on:
-- Career development conversations
-- Technical mentoring
-- Stretch assignments
-
-### 3. Bridge Technical and Business
-Security leaders must translate risk into business language and business requirements into technical solutions.
-
-## Common Pitfalls
-
-- **Staying too technical**: Getting pulled back into implementation
-- **Over-delegating**: Losing touch with the technical reality
-- **Analysis paralysis**: Overthinking decisions that should be made quickly
-
-## The Reward
-
-Leading a high-performing security team that ships reliable, secure systems while growing individually is incredibly rewarding. The impact you can have through others far exceeds what you can achieve alone.
-    `
+        <h2 className="text-2xl font-semibold mt-8 mb-4">The Reward</h2>
+        <p className="mb-4">
+          Leading a high-performing security team that ships reliable, secure systems while growing individually is incredibly rewarding. The impact you can have through others far exceeds what you can achieve alone.
+        </p>
+      </>
+    )
   },
   "waf-program-implementation": {
     title: "Building a WAF Program: Defense in Depth",
     date: "2025-06-07",
-    content: `
-# Building a WAF Program: Defense in Depth
+    content: (
+      <>
+        <p className="text-lg mb-6">
+          Implementing a Web Application Firewall (WAF) program across a large organization like Adobe requires more than just deploying technology—it requires a comprehensive strategy.
+        </p>
 
-Implementing a Web Application Firewall (WAF) program across a large organization like Adobe requires more than just deploying technology—it requires a comprehensive strategy.
+        <h2 className="text-2xl font-semibold mt-8 mb-4">The Challenge</h2>
+        <p className="mb-4">
+          Adobe's infrastructure spans multiple clouds, hundreds of applications, and diverse technology stacks. Our challenge was implementing consistent WAF protection without disrupting development velocity.
+        </p>
 
-## The Challenge
+        <h2 className="text-2xl font-semibold mt-8 mb-4">Our Approach</h2>
 
-Adobe's infrastructure spans multiple clouds, hundreds of applications, and diverse technology stacks. Our challenge was implementing consistent WAF protection without disrupting development velocity.
+        <h3 className="text-xl font-medium mt-6 mb-3">1. Centralized Management</h3>
+        <p className="mb-4">We implemented AWS WAF with centralized rule management through AWS Firewall Manager, allowing us to:</p>
+        <ul className="list-disc ml-6 mb-6 space-y-2">
+          <li>Deploy consistent policies across all accounts</li>
+          <li>Manage exceptions centrally</li>
+          <li>Monitor effectiveness at scale</li>
+        </ul>
 
-## Our Approach
+        <h3 className="text-xl font-medium mt-6 mb-3">2. Application-Aware Rules</h3>
+        <p className="mb-4">Generic WAF rules don't work for all applications. We developed:</p>
+        <ul className="list-disc ml-6 mb-6 space-y-2">
+          <li>Application-specific rule sets</li>
+          <li>Machine learning-based anomaly detection</li>
+          <li>Custom rules for Adobe's unique traffic patterns</li>
+        </ul>
 
-### 1. Centralized Management
-We implemented AWS WAF with centralized rule management through AWS Firewall Manager, allowing us to:
-- Deploy consistent policies across all accounts
-- Manage exceptions centrally
-- Monitor effectiveness at scale
+        <h3 className="text-xl font-medium mt-6 mb-3">3. DevSecOps Integration</h3>
+        <p className="mb-4">WAF deployment became part of our infrastructure pipeline:</p>
+        <ul className="list-disc ml-6 mb-6 space-y-2">
+          <li>Terraform modules for consistent deployment</li>
+          <li>Automated testing of WAF rules</li>
+          <li>CI/CD integration for rule updates</li>
+        </ul>
 
-### 2. Application-Aware Rules
-Generic WAF rules don't work for all applications. We developed:
-- Application-specific rule sets
-- Machine learning-based anomaly detection
-- Custom rules for Adobe's unique traffic patterns
+        <h2 className="text-2xl font-semibold mt-8 mb-4">Key Metrics</h2>
+        <p className="mb-4">After 18 months of implementation:</p>
+        <ul className="list-disc ml-6 mb-6 space-y-2">
+          <li><strong>99.2%</strong> uptime across all protected applications</li>
+          <li><strong>40%</strong> reduction in application-layer attacks reaching origin servers</li>
+          <li><strong>Zero</strong> false positive incidents affecting customer traffic</li>
+        </ul>
 
-### 3. DevSecOps Integration
-WAF deployment became part of our infrastructure pipeline:
-- Terraform modules for consistent deployment
-- Automated testing of WAF rules
-- CI/CD integration for rule updates
+        <h2 className="text-2xl font-semibold mt-8 mb-4">Lessons Learned</h2>
+        <ol className="list-decimal ml-6 mb-6 space-y-2">
+          <li><strong>Start Simple</strong>: Begin with basic rules and evolve based on traffic patterns</li>
+          <li><strong>Monitor Everything</strong>: WAF logs are goldmines for understanding attack patterns</li>
+          <li><strong>Team Training</strong>: Ensure operations teams understand WAF behavior and troubleshooting</li>
+        </ol>
 
-## Key Metrics
-
-After 18 months of implementation:
-- **99.2%** uptime across all protected applications
-- **40%** reduction in application-layer attacks reaching origin servers
-- **Zero** false positive incidents affecting customer traffic
-
-## Lessons Learned
-
-1. **Start Simple**: Begin with basic rules and evolve based on traffic patterns
-2. **Monitor Everything**: WAF logs are goldmines for understanding attack patterns
-3. **Team Training**: Ensure operations teams understand WAF behavior and troubleshooting
-
-## Conclusion
-
-A successful WAF program is about building security into your application delivery pipeline, not just blocking bad traffic. When done right, it enhances both security and reliability.
-    `
+        <h2 className="text-2xl font-semibold mt-8 mb-4">Conclusion</h2>
+        <p className="mb-4">
+          A successful WAF program is about building security into your application delivery pipeline, not just blocking bad traffic. When done right, it enhances both security and reliability.
+        </p>
+      </>
+    )
   }
 };
 
@@ -167,7 +204,7 @@ export const BlogPost = () => {
             <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
             <p className="text-gray-600 mb-8">{post.date}</p>
             
-            <div className="whitespace-pre-line leading-relaxed">
+            <div className="prose prose-lg max-w-none">
               {post.content}
             </div>
           </article>
