@@ -183,29 +183,29 @@ const blogPosts = {
       </>
     )
   },
-  "pavel-kettlebell-method": {
-    title: "The Pavel Method: Kettlebell Training for Strength and Resilience",
+  "pavel-barbell-method": {
+    title: "The Pavel Method: Barbell Training for Strength and Resilience",
     date: "2025-06-10",
     readTime: "7 min read",
     category: "Fitness",
     content: (
       <>
         <p className="text-lg mb-6">
-          My journey with kettlebells began five years ago when I discovered Pavel Tsatsouline's work. His no-nonsense approach to strength training revolutionized not just my physical capabilities, but my entire approach to fitness and resilience.
+          My journey with barbell training began five years ago when I discovered Pavel Tsatsouline's work. His no-nonsense approach to strength training revolutionized not just my physical capabilities, but my entire approach to fitness and resilience.
         </p>
 
         <div className="my-8">
           <img 
-            src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=800&h=600&fit=crop" 
-            alt="Kettlebell training" 
+            src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=800&h=600&fit=crop" 
+            alt="Barbell training" 
             className="rounded-lg w-full h-auto shadow-lg"
           />
-          <p className="text-sm text-gray-500 mt-2 text-center">Kettlebell training combines strength, power, and endurance in one compact tool</p>
+          <p className="text-sm text-gray-500 mt-2 text-center">Barbell training combines strength, power, and endurance in one versatile tool</p>
         </div>
 
         <h2 className="text-2xl font-semibold mt-8 mb-4">Who is Pavel Tsatsouline?</h2>
         <p className="mb-4">
-          For those unfamiliar, Pavel Tsatsouline is often credited with introducing kettlebell training to the West. A former Soviet Special Forces physical training instructor, Pavel's methods focus on:
+          For those unfamiliar, Pavel Tsatsouline is often credited with introducing effective strength training methods to the West. A former Soviet Special Forces physical training instructor, Pavel's methods focus on:
         </p>
         <ul className="list-disc ml-6 mb-6 space-y-2">
           <li>Strength as a skill, not just a physical attribute</li>
@@ -218,41 +218,41 @@ const blogPosts = {
 
         <h3 className="text-xl font-medium mt-6 mb-3">1. Tension and Relaxation</h3>
         <p className="mb-4">
-          Pavel's core teaching is about generating maximum tension when needed, and relaxing completely when not. This principle applies not just to kettlebell training but to life itself.
+          Pavel's core teaching is about generating maximum tension when needed, and relaxing completely when not. This principle applies not just to barbell training but to life itself.
         </p>
 
         <div className="my-8">
           <img 
-            src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?w=800&h=600&fit=crop" 
-            alt="Kettlebell swing" 
+            src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=600&fit=crop" 
+            alt="Barbell deadlift" 
             className="rounded-lg w-full h-auto shadow-lg"
           />
-          <p className="text-sm text-gray-500 mt-2 text-center">The kettlebell swing: a fundamental movement that builds explosive power</p>
+          <p className="text-sm text-gray-500 mt-2 text-center">The barbell deadlift: a fundamental movement that builds explosive power</p>
         </div>
 
-        <h3 className="text-xl font-medium mt-6 mb-3">2. The Power of the Swing</h3>
+        <h3 className="text-xl font-medium mt-6 mb-3">2. The Power of the Deadlift</h3>
         <p className="mb-4">
-          The kettlebell swing is the cornerstone of Pavel's system. This ballistic movement:
+          The barbell deadlift is the cornerstone of Pavel's system. This fundamental movement:
         </p>
         <ul className="list-disc ml-6 mb-6 space-y-2">
           <li>Develops explosive hip power</li>
           <li>Strengthens the posterior chain (back, glutes, hamstrings)</li>
-          <li>Builds cardiovascular endurance without traditional "cardio"</li>
+          <li>Builds overall strength without complicated routines</li>
           <li>Teaches proper hip hinging patterns essential for daily life</li>
         </ul>
 
         <h3 className="text-xl font-medium mt-6 mb-3">3. Simple & Sinister</h3>
         <p className="mb-4">
-          Pavel's "Simple & Sinister" program exemplifies his minimalist approach: just two exercises (the swing and the Turkish get-up) performed regularly can transform your fitness. The beauty lies in its simplicity and focus on quality over quantity.
+          Pavel's "Simple & Sinister" approach exemplifies his minimalist philosophy: just a few core exercises performed regularly can transform your fitness. The beauty lies in its simplicity and focus on quality over quantity.
         </p>
 
         <div className="my-8">
           <img 
-            src="https://images.unsplash.com/photo-1603287681836-b174ce5074c2?w=800&h=600&fit=crop" 
-            alt="Kettlebell goblet squat" 
+            src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=800&h=600&fit=crop" 
+            alt="Barbell squat" 
             className="rounded-lg w-full h-auto shadow-lg"
           />
-          <p className="text-sm text-gray-500 mt-2 text-center">The goblet squat: Pavel's solution to teaching perfect squat form</p>
+          <p className="text-sm text-gray-500 mt-2 text-center">The barbell squat: Pavel's approach to building perfect squat form</p>
         </div>
 
         <h2 className="text-2xl font-semibold mt-8 mb-4">My Personal Experience</h2>
@@ -272,25 +272,25 @@ const blogPosts = {
 
         <div className="my-8">
           <img 
-            src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?w=800&h=600&fit=crop" 
-            alt="Kettlebell strength training" 
+            src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=800&h=600&fit=crop" 
+            alt="Barbell strength training" 
             className="rounded-lg w-full h-auto shadow-lg"
           />
-          <p className="text-sm text-gray-500 mt-2 text-center">Kettlebell training builds "wiry strength" - powerful but functional</p>
+          <p className="text-sm text-gray-500 mt-2 text-center">Barbell training builds "wiry strength" - powerful but functional</p>
         </div>
 
         <h3 className="text-xl font-medium mt-6 mb-3">Efficiency in Training</h3>
         <p className="mb-4">
-          Perhaps the greatest benefit has been time efficiency. A 20-minute kettlebell session following Pavel's principles delivers more real-world strength and conditioning than hours of conventional gym work.
+          Perhaps the greatest benefit has been time efficiency. A 20-minute barbell session following Pavel's principles delivers more real-world strength and conditioning than hours of conventional gym work.
         </p>
 
         <h2 className="text-2xl font-semibold mt-8 mb-4">Getting Started with Pavel's Methods</h2>
         <p className="mb-4">
-          If you're interested in exploring kettlebell training the Pavel way:
+          If you're interested in exploring barbell training the Pavel way:
         </p>
         <ol className="list-decimal ml-6 mb-6 space-y-2">
-          <li><strong>Start with technique</strong>: Form is paramount; begin with a lighter kettlebell than you think you need</li>
-          <li><strong>Master the fundamentals</strong>: The swing, get-up, goblet squat, and press form the foundation</li>
+          <li><strong>Start with technique</strong>: Form is paramount; begin with lighter weights than you think you need</li>
+          <li><strong>Master the fundamentals</strong>: The deadlift, squat, press, and bench form the foundation</li>
           <li><strong>Focus on quality</strong>: "Strength is a skill" means practicing perfect reps, not maximizing fatigue</li>
           <li><strong>Be consistent</strong>: Regular practice trumps occasional intensity</li>
           <li><strong>Respect recovery</strong>: Pavel emphasizes that strength is built during recovery, not during training</li>
@@ -298,10 +298,10 @@ const blogPosts = {
 
         <h2 className="text-2xl font-semibold mt-8 mb-4">Conclusion: Strength as a Practice</h2>
         <p className="mb-4">
-          Pavel's approach to kettlebell training isn't just about physical development—it's a philosophy of approaching strength as a skill to be practiced and refined. The kettlebell becomes not just a tool but a teacher of movement, tension control, and resilience.
+          Pavel's approach to barbell training isn't just about physical development—it's a philosophy of approaching strength as a skill to be practiced and refined. The barbell becomes not just a tool but a teacher of movement, tension control, and resilience.
         </p>
         <p className="mb-4">
-          In our modern world of fitness fads and complicated training systems, there's profound wisdom in Pavel's minimalist approach: "Simple does not mean easy." The kettlebell, when used with proper technique and consistent practice, offers a path to strength that carries over into every aspect of life.
+          In our modern world of fitness fads and complicated training systems, there's profound wisdom in Pavel's minimalist approach: "Simple does not mean easy." The barbell, when used with proper technique and consistent practice, offers a path to strength that carries over into every aspect of life.
         </p>
       </>
     )
