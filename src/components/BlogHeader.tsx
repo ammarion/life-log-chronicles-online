@@ -45,12 +45,9 @@ export const BlogHeader = () => {
               href="https://www.linkedin.com/in/ammar-alim-6630a977/" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-gray-700 hover:text-gray-900 transition-colors flex items-center"
+              className="text-gray-700 hover:text-gray-900 transition-colors"
             >
               LinkedIn
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 ml-1">
-                <path d="M20 4h1a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h1m0 0v2m0-2h16m-5 12v-5.5m0 5.5v-5.5m0 0c0-.471.029-.943.088-1.405M16 10.5h-4v5.5m4-5.5c0 1.657-1.343 3-3 3m0 0c-1.657 0-3-1.343-3-3m3 3v5.5m-3-8.5h6"/>
-              </svg>
             </a>
           </nav>
         </div>
@@ -69,13 +66,10 @@ export const BlogHeader = () => {
                 href="https://www.linkedin.com/in/ammar-alim-6630a977/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="text-gray-700 hover:text-gray-900 transition-colors flex items-center"
+                className="text-gray-700 hover:text-gray-900 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 LinkedIn
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 ml-1">
-                  <path d="M20 4h1a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h1m0 0v2m0-2h16m-5 12v-5.5m0 5.5v-5.5m0 0c0-.471.029-.943.088-1.405M16 10.5h-4v5.5m4-5.5c0 1.657-1.343 3-3 3m0 0c-1.657 0-3-1.343-3-3m3 3v5.5m-3-8.5h6"/>
-                </svg>
               </a>
             </nav>
           </div>
