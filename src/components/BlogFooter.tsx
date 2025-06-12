@@ -5,6 +5,13 @@ import { Link } from "react-router-dom";
 export const BlogFooter = () => {
   const currentYear = new Date().getFullYear();
 
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <footer className="bg-gray-900 text-white py-12">
       <div className="container mx-auto px-4">
@@ -26,18 +33,18 @@ export const BlogFooter = () => {
             <h4 className="font-playfair font-semibold text-lg mb-4">Explore</h4>
             <ul className="space-y-2 font-inter">
               <li><Link to="/" className="text-gray-400 hover:text-white transition-colors">Home</Link></li>
-              <li><a href="#about" className="text-gray-400 hover:text-white transition-colors">About</a></li>
-              <li><a href="#posts" className="text-gray-400 hover:text-white transition-colors">Posts</a></li>
-              <li><Link to="/#contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link></li>
+              <li><Link to="/" onClick={() => scrollToSection('about')} className="text-gray-400 hover:text-white transition-colors">About</Link></li>
+              <li><Link to="/" onClick={() => scrollToSection('posts')} className="text-gray-400 hover:text-white transition-colors">Posts</Link></li>
+              <li><Link to="/" onClick={() => scrollToSection('contact')} className="text-gray-400 hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>
           
           <div>
             <h4 className="font-playfair font-semibold text-lg mb-4">Categories</h4>
             <ul className="space-y-2 font-inter">
+              <li><Link to="/category/tech" className="text-gray-400 hover:text-white transition-colors">Tech</Link></li>
+              <li><Link to="/category/career" className="text-gray-400 hover:text-white transition-colors">Career</Link></li>
               <li><Link to="/category/lifestyle" className="text-gray-400 hover:text-white transition-colors">Lifestyle</Link></li>
-              <li><Link to="/category/personal-growth" className="text-gray-400 hover:text-white transition-colors">Personal Growth</Link></li>
-              <li><Link to="/category/mindfulness" className="text-gray-400 hover:text-white transition-colors">Mindfulness</Link></li>
               <li><Link to="/category/travel" className="text-gray-400 hover:text-white transition-colors">Travel</Link></li>
             </ul>
           </div>
