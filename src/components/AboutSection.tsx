@@ -1,7 +1,8 @@
 
 import { Card, CardContent } from "@/components/ui/card";
-import { Heart, Camera, Book } from "lucide-react";
+import { Heart, Camera, Book, ExternalLink } from "lucide-react";
 import profileImage from "@/assets/images/IMG_1822.jpg";
+import { Button } from "./ui/button";
 
 export const AboutSection = () => {
   return (
@@ -34,6 +35,18 @@ export const AboutSection = () => {
                     When I'm not architecting security solutions or leading teams, you'll find me exploring cloud technologies, 
                     contributing to the security community, or diving deep into the latest DevSecOps practices.
                   </p>
+                  <div className="mt-6">
+                    <a 
+                      href="https://blog.developer.adobe.com/en/publish/2024/11/behind-the-scenes-with-ammar-alim-devsecops-leader" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
+                      <Button variant="outline" className="flex items-center gap-2">
+                        Read Adobe's feature about me
+                        <ExternalLink className="h-4 w-4" />
+                      </Button>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
