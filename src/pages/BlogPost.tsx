@@ -181,119 +181,128 @@ const blogPosts = {
         </p>
       </>
     )
-  }
-};
+  },
+  "pavel-kettlebell-method": {
+    title: "The Pavel Method: Kettlebell Training for Strength and Resilience",
+    date: "2025-06-10",
+    readTime: "7 min read",
+    category: "Fitness",
+    content: (
+      <>
+        <p className="text-lg mb-6">
+          My journey with kettlebells began five years ago when I discovered Pavel Tsatsouline's work. His no-nonsense approach to strength training revolutionized not just my physical capabilities, but my entire approach to fitness and resilience.
+        </p>
 
-export const BlogPost = () => {
-  const { slug } = useParams<{ slug: string }>();
-  const post = slug ? blogPosts[slug as keyof typeof blogPosts] : null;
-
-  useEffect(() => {
-    // Scroll to top when component mounts
-    window.scrollTo(0, 0);
-  }, [slug]);
-
-  const handleShare = () => {
-    if (navigator.share) {
-      navigator.share({
-        title: post?.title,
-        url: window.location.href,
-      }).catch((error) => console.log('Error sharing', error));
-    } else {
-      navigator.clipboard.writeText(window.location.href);
-      alert('Link copied to clipboard!');
-    }
-  };
-
-  if (!post) {
-    return (
-      <div className="min-h-screen bg-white">
-        <BlogHeader />
-        <div className="container mx-auto px-4 py-20">
-          <div className="max-w-2xl mx-auto">
-            <h1 className="text-3xl font-bold mb-4">Post Not Found</h1>
-            <p className="text-gray-600 mb-6">The article you're looking for doesn't exist or has been moved.</p>
-            <Link to="/">
-              <Button variant="default" className="bg-gradient-to-r from-rose-500 to-orange-500">
-                <ArrowLeft className="mr-2 h-4 w-4" />
-                Back to Home
-              </Button>
-            </Link>
-          </div>
+        <div className="my-8">
+          <img 
+            src="/src/assets/images/kettlebell/kettlebell-training.jpg" 
+            alt="Kettlebell training" 
+            className="rounded-lg w-full h-auto shadow-lg"
+          />
+          <p className="text-sm text-gray-500 mt-2 text-center">Kettlebell training combines strength, power, and endurance in one compact tool</p>
         </div>
-        <BlogFooter />
-      </div>
-    );
-  }
 
-  return (
-    <div className="min-h-screen bg-white">
-      <BlogHeader />
-      <div className="container mx-auto px-4 py-12">
-        <div className="max-w-3xl mx-auto">
-          <Link to="/" className="inline-flex items-center text-rose-600 hover:text-rose-800 transition-colors mb-8 group">
-            <ArrowLeft className="mr-2 h-4 w-4 group-hover:-translate-x-1 transition-transform" />
-            Back to Home
-          </Link>
-          
-          <article>
-            <header className="mb-10">
-              <div className="inline-block px-3 py-1 mb-4 text-sm font-medium text-white bg-gradient-to-r from-rose-500 to-orange-500 rounded-full">
-                {post.category}
-              </div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 font-playfair">{post.title}</h1>
-              
-              <div className="flex items-center text-gray-600 text-sm mb-6">
-                <div className="flex items-center mr-6">
-                  <Calendar className="w-4 h-4 mr-1" />
-                  <span>{post.date}</span>
-                </div>
-                <div className="flex items-center">
-                  <Clock className="w-4 h-4 mr-1" />
-                  <span>{post.readTime}</span>
-                </div>
-              </div>
-              
-              <Button 
-                variant="outline" 
-                size="sm" 
-                className="flex items-center text-gray-600 hover:text-rose-600 transition-colors"
-                onClick={handleShare}
-              >
-                <Share2 className="w-4 h-4 mr-2" />
-                Share Article
-              </Button>
-            </header>
-            
-            <div className="prose prose-lg max-w-none prose-headings:font-playfair prose-headings:font-bold prose-a:text-rose-600">
-              {post.content}
-            </div>
-          </article>
-          
-          <div className="border-t border-gray-200 mt-16 pt-8">
-            <h3 className="text-2xl font-bold mb-6 font-playfair">Continue Reading</h3>
-            <div className="grid md:grid-cols-2 gap-6">
-              {Object.entries(blogPosts)
-                .filter(([key]) => key !== slug)
-                .slice(0, 2)
-                .map(([key, relatedPost]) => (
-                  <Link 
-                    key={key} 
-                    to={`/post/${key}`}
-                    className="block p-6 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow"
-                  >
-                    <h4 className="font-bold text-lg mb-2 line-clamp-2">{relatedPost.title}</h4>
-                    <div className="flex items-center text-gray-600 text-sm">
-                      <Calendar className="w-3 h-3 mr-1" />
-                      <span>{relatedPost.date}</span>
-                    </div>
-                  </Link>
-                ))}
-            </div>
-          </div>
+        <h2 className="text-2xl font-semibold mt-8 mb-4">Who is Pavel Tsatsouline?</h2>
+        <p className="mb-4">
+          For those unfamiliar, Pavel Tsatsouline is often credited with introducing kettlebell training to the West. A former Soviet Special Forces physical training instructor, Pavel's methods focus on:
+        </p>
+        <ul className="list-disc ml-6 mb-6 space-y-2">
+          <li>Strength as a skill, not just a physical attribute</li>
+          <li>Tension control and "greasing the groove"</li>
+          <li>Minimalist but highly effective training protocols</li>
+          <li>The integration of breathing techniques with movement</li>
+        </ul>
+
+        <h2 className="text-2xl font-semibold mt-8 mb-4">The Fundamental Principles</h2>
+
+        <h3 className="text-xl font-medium mt-6 mb-3">1. Tension and Relaxation</h3>
+        <p className="mb-4">
+          Pavel's core teaching is about generating maximum tension when needed, and relaxing completely when not. This principle applies not just to kettlebell training but to life itself.
+        </p>
+
+        <div className="my-8">
+          <img 
+            src="/src/assets/images/kettlebell/kettlebell-swing.jpg" 
+            alt="Kettlebell swing" 
+            className="rounded-lg w-full h-auto shadow-lg"
+          />
+          <p className="text-sm text-gray-500 mt-2 text-center">The kettlebell swing: a fundamental movement that builds explosive power</p>
         </div>
-      </div>
-      <BlogFooter />
-    </div>
-  );
+
+        <h3 className="text-xl font-medium mt-6 mb-3">2. The Power of the Swing</h3>
+        <p className="mb-4">
+          The kettlebell swing is the cornerstone of Pavel's system. This ballistic movement:
+        </p>
+        <ul className="list-disc ml-6 mb-6 space-y-2">
+          <li>Develops explosive hip power</li>
+          <li>Strengthens the posterior chain (back, glutes, hamstrings)</li>
+          <li>Builds cardiovascular endurance without traditional "cardio"</li>
+          <li>Teaches proper hip hinging patterns essential for daily life</li>
+        </ul>
+
+        <h3 className="text-xl font-medium mt-6 mb-3">3. Simple & Sinister</h3>
+        <p className="mb-4">
+          Pavel's "Simple & Sinister" program exemplifies his minimalist approach: just two exercises (the swing and the Turkish get-up) performed regularly can transform your fitness. The beauty lies in its simplicity and focus on quality over quantity.
+        </p>
+
+        <div className="my-8">
+          <img 
+            src="/src/assets/images/kettlebell/kettlebell-goblet-squat.jpg" 
+            alt="Kettlebell goblet squat" 
+            className="rounded-lg w-full h-auto shadow-lg"
+          />
+          <p className="text-sm text-gray-500 mt-2 text-center">The goblet squat: Pavel's solution to teaching perfect squat form</p>
+        </div>
+
+        <h2 className="text-2xl font-semibold mt-8 mb-4">My Personal Experience</h2>
+        <p className="mb-4">
+          Implementing Pavel's methods transformed my approach to fitness in several ways:
+        </p>
+
+        <h3 className="text-xl font-medium mt-6 mb-3">Strength Without Bulk</h3>
+        <p className="mb-4">
+          Following Pavel's protocols, I developed what he calls "wiry strength" – significant power without excessive muscle mass. This functional strength translates directly to improved performance in daily activities.
+        </p>
+
+        <h3 className="text-xl font-medium mt-6 mb-3">Resilience Through Practice</h3>
+        <p className="mb-4">
+          "Greasing the groove" – practicing strength skills frequently but never to failure – built not just physical but mental resilience. This approach teaches patience and consistency over intensity.
+        </p>
+
+        <div className="my-8">
+          <img 
+            src="/src/assets/images/kettlebell/kettlebell-strength.jpg" 
+            alt="Kettlebell strength training" 
+            className="rounded-lg w-full h-auto shadow-lg"
+          />
+          <p className="text-sm text-gray-500 mt-2 text-center">Kettlebell training builds "wiry strength" - powerful but functional</p>
+        </div>
+
+        <h3 className="text-xl font-medium mt-6 mb-3">Efficiency in Training</h3>
+        <p className="mb-4">
+          Perhaps the greatest benefit has been time efficiency. A 20-minute kettlebell session following Pavel's principles delivers more real-world strength and conditioning than hours of conventional gym work.
+        </p>
+
+        <h2 className="text-2xl font-semibold mt-8 mb-4">Getting Started with Pavel's Methods</h2>
+        <p className="mb-4">
+          If you're interested in exploring kettlebell training the Pavel way:
+        </p>
+        <ol className="list-decimal ml-6 mb-6 space-y-2">
+          <li><strong>Start with technique</strong>: Form is paramount; begin with a lighter kettlebell than you think you need</li>
+          <li><strong>Master the fundamentals</strong>: The swing, get-up, goblet squat, and press form the foundation</li>
+          <li><strong>Focus on quality</strong>: "Strength is a skill" means practicing perfect reps, not maximizing fatigue</li>
+          <li><strong>Be consistent</strong>: Regular practice trumps occasional intensity</li>
+          <li><strong>Respect recovery</strong>: Pavel emphasizes that strength is built during recovery, not during training</li>
+        </ol>
+
+        <h2 className="text-2xl font-semibold mt-8 mb-4">Conclusion: Strength as a Practice</h2>
+        <p className="mb-4">
+          Pavel's approach to kettlebell training isn't just about physical development—it's a philosophy of approaching strength as a skill to be practiced and refined. The kettlebell becomes not just a tool but a teacher of movement, tension control, and resilience.
+        </p>
+        <p className="mb-4">
+          In our modern world of fitness fads and complicated training systems, there's profound wisdom in Pavel's minimalist approach: "Simple does not mean easy." The kettlebell, when used with proper technique and consistent practice, offers a path to strength that carries over into every aspect of life.
+        </p>
+      </>
+    )
+  }
 };

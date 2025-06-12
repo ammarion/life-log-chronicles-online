@@ -7,7 +7,7 @@ export const categories = [
   { name: "All", slug: "all" },
   { name: "Tech", slug: "tech", subcategories: ["Cloud Security", "DevSecOps"] },
   { name: "Career", slug: "career", subcategories: ["Leadership"] },
-  { name: "Lifestyle", slug: "lifestyle", subcategories: ["Personal Growth", "Mindfulness"] },
+  { name: "Lifestyle", slug: "lifestyle", subcategories: ["Personal Growth", "Mindfulness", "Fitness"] },
   { name: "Travel", slug: "travel" }
 ];
 
@@ -88,6 +88,17 @@ export const allPosts = [
     readTime: "6 min read",
     image: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&h=600&fit=crop",
     slug: "digital-minimalism"
+  },
+  {
+    id: 8,
+    title: "The Pavel Method: Kettlebell Training for Strength and Resilience",
+    excerpt: "How kettlebell training based on Pavel Tsatsouline's principles transformed my fitness approach and overall strength.",
+    category: "Fitness",
+    date: "Jun 10, 2025",
+    readTime: "7 min read",
+    image: "/src/assets/images/kettlebell/kettlebell-training.jpg",
+    featured: true,
+    slug: "pavel-kettlebell-method"
   }
 ];
 
