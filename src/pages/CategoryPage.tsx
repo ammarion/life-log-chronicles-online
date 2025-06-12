@@ -17,6 +17,7 @@ const categoryMap: Record<string, string> = {
   "lifestyle": "Lifestyle",
   "personal-growth": "Personal Growth",
   "mindfulness": "Mindfulness",
+  "fitness": "Fitness",
   "travel": "Travel"
 };
 
@@ -38,7 +39,7 @@ export const CategoryPage = () => {
     }
     
     if (category === "lifestyle") {
-      return post.category === "Personal Growth" || post.category === "Mindfulness";
+      return post.category === "Personal Growth" || post.category === "Mindfulness" || post.category === "Fitness";
     }
     
     // Otherwise check if the category matches directly
