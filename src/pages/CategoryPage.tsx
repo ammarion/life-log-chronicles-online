@@ -39,7 +39,7 @@ export const CategoryPage = () => {
     }
     
     if (category === "lifestyle") {
-      return post.category === "Personal Growth" || post.category === "Mindfulness" || post.category === "Fitness";
+      return ["Personal Growth", "Mindfulness", "Fitness"].includes(post.category);
     }
     
     // Otherwise check if the category matches directly
