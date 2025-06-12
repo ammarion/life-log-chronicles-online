@@ -43,7 +43,6 @@ const Index = () => {
             <FeaturedPosts />
           </div>
         </section>
-        <AboutSection />
         <Newsletter />
       </main>
       <BlogFooter />
