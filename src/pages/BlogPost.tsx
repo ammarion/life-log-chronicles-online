@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Calendar, Clock, Share2 } from "lucide-react";
 import { useEffect } from "react";
 
+// This is our full blog posts data
 const blogPosts = {
   "aws-security-architecture": {
     title: "Architecting Security in the Cloud: Lessons from AWS",
@@ -304,5 +305,186 @@ const blogPosts = {
         </p>
       </>
     )
+  },
+  "tech-career-balance": {
+    title: "Finding Balance: Tech Career and Personal Growth",
+    date: "2024-12-05",
+    readTime: "5 min read",
+    category: "Personal Growth",
+    content: (
+      <>
+        <p className="text-lg mb-6">
+          Working in technology can be all-consuming. Here's how I've learned to maintain balance while still advancing my career.
+        </p>
+        <p className="mb-4">
+          More content coming soon...
+        </p>
+      </>
+    )
+  },
+  "mindfulness-for-engineers": {
+    title: "Mindfulness Practices for the Busy Engineer",
+    date: "2024-11-28",
+    readTime: "4 min read",
+    category: "Mindfulness",
+    content: (
+      <>
+        <p className="text-lg mb-6">
+          Engineering work requires deep focus and problem-solving. Mindfulness practices can enhance these abilities while preventing burnout.
+        </p>
+        <p className="mb-4">
+          More content coming soon...
+        </p>
+      </>
+    )
+  },
+  "remote-work-southeast-asia": {
+    title: "Travel Diaries: Working Remotely from Southeast Asia",
+    date: "2024-11-20",
+    readTime: "9 min read",
+    category: "Travel",
+    content: (
+      <>
+        <p className="text-lg mb-6">
+          My experience working as a security engineer while exploring Thailand, Vietnam, and Indonesia.
+        </p>
+        <p className="mb-4">
+          More content coming soon...
+        </p>
+      </>
+    )
+  },
+  "digital-minimalism": {
+    title: "Digital Minimalism: Simplifying Your Tech Life",
+    date: "2024-11-15",
+    readTime: "6 min read",
+    category: "Lifestyle",
+    content: (
+      <>
+        <p className="text-lg mb-6">
+          How reducing digital clutter and being intentional about technology use has improved my productivity and mental clarity.
+        </p>
+        <p className="mb-4">
+          More content coming soon...
+        </p>
+      </>
+    )
   }
+};
+
+export const BlogPost = () => {
+  const { slug } = useParams<{ slug: string }>();
+  console.log("Current slug:", slug);
+  const post = slug ? blogPosts[slug as keyof typeof blogPosts] : null;
+  console.log("Post found:", post ? "Yes" : "No");
+  console.log("Available blog posts:", Object.keys(blogPosts));
+
+  useEffect(() => {
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
+  }, [slug]);
+
+  const handleShare = () => {
+    if (navigator.share) {
+      navigator.share({
+        title: post?.title,
+        url: window.location.href,
+      }).catch((error) => console.log('Error sharing', error));
+    } else {
+      navigator.clipboard.writeText(window.location.href);
+      alert('Link copied to clipboard!');
+    }
+  };
+
+  if (!post) {
+    return (
+      <div className="min-h-screen bg-white">
+        <BlogHeader />
+        <div className="container mx-auto px-4 py-20">
+          <div className="max-w-2xl mx-auto">
+            <h1 className="text-3xl font-bold mb-4">Post Not Found</h1>
+            <p className="text-gray-600 mb-6">The article you're looking for doesn't exist or has been moved.</p>
+            <Link to="/">
+              <Button variant="default" className="bg-gradient-to-r from-rose-500 to-orange-500">
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                Back to Home
+              </Button>
+            </Link>
+          </div>
+        </div>
+        <BlogFooter />
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-white">
+      <BlogHeader />
+      <div className="container mx-auto px-4 py-12">
+        <div className="max-w-3xl mx-auto">
+          <Link to="/" className="inline-flex items-center text-rose-600 hover:text-rose-800 transition-colors mb-8 group">
+            <ArrowLeft className="mr-2 h-4 w-4 group-hover:-translate-x-1 transition-transform" />
+            Back to Home
+          </Link>
+          
+          <article>
+            <header className="mb-10">
+              <div className="inline-block px-3 py-1 mb-4 text-sm font-medium text-white bg-gradient-to-r from-rose-500 to-orange-500 rounded-full">
+                {post.category}
+              </div>
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 font-playfair">{post.title}</h1>
+              
+              <div className="flex items-center text-gray-600 text-sm mb-6">
+                <div className="flex items-center mr-6">
+                  <Calendar className="w-4 h-4 mr-1" />
+                  <span>{post.date}</span>
+                </div>
+                <div className="flex items-center">
+                  <Clock className="w-4 h-4 mr-1" />
+                  <span>{post.readTime}</span>
+                </div>
+              </div>
+              
+              <Button 
+                variant="outline" 
+                size="sm" 
+                className="flex items-center text-gray-600 hover:text-rose-600 transition-colors"
+                onClick={handleShare}
+              >
+                <Share2 className="w-4 h-4 mr-2" />
+                Share Article
+              </Button>
+            </header>
+            
+            <div className="prose prose-lg max-w-none prose-headings:font-playfair prose-headings:font-bold prose-a:text-rose-600">
+              {post.content}
+            </div>
+          </article>
+          
+          <div className="border-t border-gray-200 mt-16 pt-8">
+            <h3 className="text-2xl font-bold mb-6 font-playfair">Continue Reading</h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              {Object.entries(blogPosts)
+                .filter(([key]) => key !== slug)
+                .slice(0, 2)
+                .map(([key, relatedPost]) => (
+                  <Link 
+                    key={key} 
+                    to={`/post/${key}`}
+                    className="block p-6 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow"
+                  >
+                    <h4 className="font-bold text-lg mb-2 line-clamp-2">{relatedPost.title}</h4>
+                    <div className="flex items-center text-gray-600 text-sm">
+                      <Calendar className="w-3 h-3 mr-1" />
+                      <span>{relatedPost.date}</span>
+                    </div>
+                  </Link>
+                ))}
+            </div>
+          </div>
+        </div>
+      </div>
+      <BlogFooter />
+    </div>
+  );
 };
