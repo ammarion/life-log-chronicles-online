@@ -96,7 +96,7 @@ export const allPosts = [
     category: "Fitness",
     date: "Jun 10, 2025",
     readTime: "7 min read",
-    image: "/src/assets/images/kettlebell/kettlebell-training.jpg",
+    image: "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=800&h=600&fit=crop",
     featured: true,
     slug: "pavel-kettlebell-method"
   }

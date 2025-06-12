@@ -195,7 +195,7 @@ const blogPosts = {
 
         <div className="my-8">
           <img 
-            src="/src/assets/images/kettlebell/kettlebell-training.jpg" 
+            src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=800&h=600&fit=crop" 
             alt="Kettlebell training" 
             className="rounded-lg w-full h-auto shadow-lg"
           />
@@ -222,7 +222,7 @@ const blogPosts = {
 
         <div className="my-8">
           <img 
-            src="/src/assets/images/kettlebell/kettlebell-swing.jpg" 
+            src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?w=800&h=600&fit=crop" 
             alt="Kettlebell swing" 
             className="rounded-lg w-full h-auto shadow-lg"
           />
@@ -247,7 +247,7 @@ const blogPosts = {
 
         <div className="my-8">
           <img 
-            src="/src/assets/images/kettlebell/kettlebell-goblet-squat.jpg" 
+            src="https://images.unsplash.com/photo-1603287681836-b174ce5074c2?w=800&h=600&fit=crop" 
             alt="Kettlebell goblet squat" 
             className="rounded-lg w-full h-auto shadow-lg"
           />
@@ -271,7 +271,7 @@ const blogPosts = {
 
         <div className="my-8">
           <img 
-            src="/src/assets/images/kettlebell/kettlebell-strength.jpg" 
+            src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?w=800&h=600&fit=crop" 
             alt="Kettlebell strength training" 
             className="rounded-lg w-full h-auto shadow-lg"
           />
