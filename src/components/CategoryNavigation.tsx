@@ -91,14 +91,14 @@ export const allPosts = [
   },
   {
     id: 8,
-    title: "The Pavel Method: Barbell Training for Strength and Resilience",
-    excerpt: "How barbell training based on Pavel Tsatsouline's principles transformed my fitness approach and overall strength.",
+    title: "The Pavel Method: Kettlebell Training for Strength and Resilience",
+    excerpt: "How kettlebell training based on Pavel Tsatsouline's principles transformed my fitness approach and overall strength.",
     category: "Fitness",
     date: "Jun 10, 2025",
     readTime: "7 min read",
-    image: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=800&h=600&fit=crop",
+    image: "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=800&h=600&fit=crop",
     featured: true,
-    slug: "pavel-barbell-method"
+    slug: "pavel-kettlebell-method"
   }
 ];
 

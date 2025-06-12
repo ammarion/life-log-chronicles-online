@@ -85,11 +85,6 @@ const token = execSync('~/life-log-chronicles-online/scripts/get-token.sh').toSt
 const octokit = new Octokit({ auth: token });
 ```
 
-## Alternative Deployment Methods
+## Automatic Deployment
 
-### Lovable Deployment
-
-As mentioned in the README, you can also deploy directly through Lovable:
-
-1. Open [Lovable Project](https://lovable.dev/projects/17678a06-b7c4-4a57-831b-89074a8c4247)
-2. Click on Share -> Publish
+When you push changes to GitHub, they will be automatically deployed through the configured GitHub Actions workflow.
