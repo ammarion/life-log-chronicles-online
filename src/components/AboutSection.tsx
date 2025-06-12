@@ -23,7 +23,7 @@ export const AboutSection = () => {
                 <div className="md:w-2/3 prose prose-lg">
                   <p className="text-gray-700 mb-4 leading-relaxed">
                     I'm Ammar Alim, a security engineer and leader passionate about building secure, scalable systems. 
-                    Currently managing Product Security at Adobe, I share insights from the intersection of technology, 
+                    Currently leading DevSecOps at Adobe, I share insights from the intersection of technology, 
                     security, and engineering leadership.
                   </p>
                   <p className="text-gray-700 mb-4 leading-relaxed">
