@@ -27,6 +27,7 @@ const Index = () => {
       <BlogHeader />
       <main>
         <HeroSection />
+        <AboutSection />
         <section className="py-20 bg-white" id="posts">
           <div className="container mx-auto px-4">
             <div className="text-center mb-8">
