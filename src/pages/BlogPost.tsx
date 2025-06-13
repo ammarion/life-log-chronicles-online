@@ -195,7 +195,7 @@ const blogPosts = {
         </p>
 
         <p className="text-lg mb-6">
-          At BSidesSLC 2025, Scott Piper delivered what I consider one of the most important keynotes in recent memory—not because it introduced revolutionary new techniques, but because it illuminated the human dimension of security work that we so often overlook. As someone who has spent years wrestling with the same challenges Piper described, I found myself nodding along with the recognition that comes from shared battle scars and hard-won wisdom.
+          At BSidesSLC 2025, Scott Piper delivered a keynote that crystallized something many of us have been grappling with: the gap between finding security problems and actually getting them fixed. While his examples were compelling, what struck me wasn't the novelty of his techniques—many of these approaches have been floating around the security community for years—but rather his systematic articulation of why traditional security approaches often fail.
         </p>
 
         <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
@@ -320,7 +320,7 @@ const blogPosts = {
         <h2 className="text-2xl font-semibold mt-8 mb-4">The Art of External Influence: David vs. Goliath in the Cloud Age</h2>
 
         <p className="mb-4">
-          Piper's stories of influencing AWS—a trillion-dollar company—from the outside represent some of the most sophisticated examples of strategic thinking I've encountered in our field. These aren't just tactics; they're masterclasses in understanding systems, incentives, and human psychology at organizational scale.
+          Piper's stories of influencing AWS from the outside are instructive, though it's worth noting that his success likely benefited from timing, his existing reputation, and AWS's particular organizational culture. Not every security researcher will have the same leverage or platform. Still, the underlying principles—building tools, coordinating multi-vector approaches, and making bold asks—are worth examining.
         </p>
 
         <h3 className="text-xl font-medium mt-6 mb-3">Parliament: The Power of Constructive Contribution</h3>
@@ -475,26 +475,26 @@ const blogPosts = {
           <li><strong>Reward systemic thinking</strong>: Recognize people who prevent problems, not just those who find them</li>
         </ul>
 
-        <h2 className="text-2xl font-semibold mt-8 mb-4">The Meta-Lesson: Becoming a Force Multiplier</h2>
+        <h2 className="text-2xl font-semibold mt-8 mb-4">The Meta-Lesson: From Individual Heroics to Systematic Change</h2>
 
         <p className="mb-4">
-          Ultimately, what makes Scott Piper's approach so powerful isn't any single technique—it's his transformation from individual contributor to force multiplier. Rather than simply being good at security work, he became good at making others better at security work. Rather than just finding problems, he created systems that prevent problems.
+          What's most valuable about Piper's examples isn't the specific tactics—many of which require significant privilege, platform, or luck to execute—but rather the underlying shift in mindset. The transition from individual contributor to systems thinker is something every security professional can pursue, regardless of their organizational position or external influence.
         </p>
 
         <p className="mb-4">
-          This represents a fundamental shift in how we think about our role as security professionals. We can continue to see ourselves as the people who find and fix security problems, or we can evolve into the people who design systems where security problems are less likely to occur in the first place.
+          This represents a maturation in how we approach security work. Instead of optimizing for personal recognition or heroic problem-solving, we can focus on creating conditions where good security outcomes emerge naturally. This isn't always as satisfying as the adrenaline rush of finding the next critical vulnerability, but it's often more impactful.
         </p>
 
         <p className="mb-4">
-          The choice between these two approaches isn't just about career advancement—it's about impact. Individual expertise scales linearly with effort. Systematic expertise scales exponentially with adoption.
+          The challenge, of course, is that systematic thinking requires patience and long-term investment in a field that often rewards immediate, visible results. Not every organization will support this approach, and not every security professional has the luxury of playing the long game.
         </p>
 
         <div className="bg-gray-100 border-l-4 border-gray-600 p-6 mt-8">
           <p className="text-base text-gray-700 mb-4">
-            <strong>Final Reflection:</strong> As I watched Piper's keynote, I was struck by how much his journey mirrors the broader evolution of our field. We've moved from artisanal hacking to industrial-scale security engineering. We've progressed from individual heroics to systematic thinking. We've evolved from adversarial relationships with development teams to collaborative partnerships.
+            <strong>Final Reflection:</strong> Piper's keynote reflects broader trends in our field—the slow recognition that technical excellence alone isn't sufficient for security impact. While his specific examples may not be universally applicable, the underlying tension he identifies is real: we're often better at finding problems than solving them systematically.
           </p>
           <p className="text-base text-gray-700">
-            The next evolution is already beginning: from reactive security programs to proactive security systems, from finding problems to preventing them, from influencing individuals to designing cultures. Piper's work gives us a roadmap for that journey—if we have the wisdom to follow it.
+            The challenge isn't just adopting his techniques, but adapting the mindset to different contexts, constraints, and organizational realities. Not everyone can influence AWS, but everyone can think more systematically about the problems they encounter daily. That's perhaps the most practical takeaway from his work.
           </p>
         </div>
 
