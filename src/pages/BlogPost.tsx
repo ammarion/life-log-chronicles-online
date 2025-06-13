@@ -183,6 +183,173 @@ const blogPosts = {
       </>
     )
   },
+  "getting-things-fixed-security-wins-fails": {
+    title: "Getting Things Fixed: Security Wins and Fails from the Trenches",
+    date: "2025-01-15",
+    readTime: "12 min read",
+    category: "Cloud Security",
+    content: (
+      <>
+        <p className="text-lg mb-6">
+          At BSidesSLC 2025, Scott Piper delivered a masterclass keynote on one of the most challenging aspects of security work: actually getting people to fix the problems you find. Drawing from his extensive experience across NSA, startups, and major tech companies, Piper shared hard-won insights about turning security findings into real-world fixes.
+        </p>
+
+        <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
+          <p className="text-sm text-blue-800">
+            <strong>Watch the full keynote:</strong> <a href="https://www.youtube.com/watch?v=SXiwyRY6ed4" target="_blank" rel="noopener noreferrer" className="underline">BSidesSLC 2025 - Getting Things Fixed by Scott Piper</a>
+          </p>
+        </div>
+
+        <h2 className="text-2xl font-semibold mt-8 mb-4">The Real Challenge: From Finding to Fixing</h2>
+        <p className="mb-4">
+          Security teams excel at finding problems. We have automated tools, bug bounty hunters, penetration testers, and manual reviews constantly surfacing vulnerabilities and misconfigurations. But as Piper noted, "the not as fun side" is getting people to actually fix those problems once identified.
+        </p>
+        <p className="mb-4">
+          This challenge exists at two levels: getting internal teams to fix issues within your organization, and getting external companies to address security concerns that affect your environment. Both require different strategies, but share common principles.
+        </p>
+
+        <h2 className="text-2xl font-semibold mt-8 mb-4">Ensure Your Own House is in Order</h2>
+        <p className="mb-4">
+          Before pointing fingers outward, Piper emphasized the importance of self-reflection. Many security teams create "antagonistic relationships" through carrots-and-sticks approaches - baking cupcakes for fixes or creating shame-based leaderboards. This misses the fundamental issue: improving your own processes to make fixing easier.
+        </p>
+
+        <h3 className="text-xl font-medium mt-6 mb-3">Generate Tickets for Every Problem</h3>
+        <p className="mb-4">
+          Piper shared a cautionary tale about a company that posted security findings to Slack channels with emoji-based tracking. "You're looking at this critical alert trying to understand if party parrot is good or bad," he noted. This breaks down because:
+        </p>
+        <ul className="list-disc ml-6 mb-6 space-y-2">
+          <li>No clear ownership or accountability</li>
+          <li>No time-to-resolution metrics</li>
+          <li>No ability to identify patterns in problem types</li>
+          <li>No tracking of false positives for tool tuning</li>
+        </ul>
+
+        <h3 className="text-xl font-medium mt-6 mb-3">Solve the Ownership Problem</h3>
+        <p className="mb-4">
+          Piper outlined a maturity model for identifying who should fix what:
+        </p>
+        <ol className="list-decimal ml-6 mb-6 space-y-2">
+          <li><strong>Manual Relay</strong>: Security team assigns to business unit, who assigns to product team, who assigns to engineer (lots of delays)</li>
+          <li><strong>Log Analysis</strong>: Look at CloudTrail or git commits to find who touched the resource last (breaks when automation deployed it)</li>
+          <li><strong>Resource Tagging</strong>: Tag everything with ownership info (not all resources can be tagged, inconsistent formats)</li>
+          <li><strong>Account Vending</strong>: Make it easy to create new AWS accounts with clear ownership (Piper's preferred approach)</li>
+        </ol>
+
+        <h2 className="text-2xl font-semibold mt-8 mb-4">Drive Towards Strategic Outcomes</h2>
+        <p className="mb-4">
+          Security teams often get trapped in "constant firefighting," tactically fixing individual issues instead of addressing root causes. Piper illustrated this with SSRF vulnerabilities in AWS environments:
+        </p>
+        <p className="mb-4">
+          <strong>Tactical approach</strong>: Fix the SSRF vulnerability<br/>
+          <strong>Strategic approach</strong>: Upgrade from IMDSv1 to IMDSv2 to prevent credential theft via SSRF
+        </p>
+
+        <h3 className="text-xl font-medium mt-6 mb-3">The 10,000 Problem Challenge</h3>
+        <p className="mb-4">
+          Piper's team discovered over 10,000 IAM user access keys that needed removal. At 30 minutes each (a conservative estimate), that represented 2.5 years of engineering time. His approach:
+        </p>
+        <ul className="list-disc ml-6 mb-6 space-y-2">
+          <li><strong>Get involved personally</strong>: Work through 100+ examples to understand the fix process</li>
+          <li><strong>Document everything</strong>: Alternative solutions, testing approaches, debugging steps</li>
+          <li><strong>Bucket problems</strong>: Group similar issues for targeted solutions</li>
+          <li><strong>Stop the bleeding</strong>: Implement guardrails to prevent new instances</li>
+          <li><strong>Find root causes</strong>: Update documentation that was causing the problem</li>
+        </ul>
+
+        <h2 className="text-2xl font-semibold mt-8 mb-4">Fixing Things Externally: Lessons from AWS</h2>
+        <p className="mb-4">
+          Piper's experience getting a trillion-dollar company to implement security fixes offers valuable lessons for anyone trying to influence external organizations.
+        </p>
+
+        <h3 className="text-xl font-medium mt-6 mb-3">Build Tools, Not Just Reports</h3>
+        <p className="mb-4">
+          When Piper found privilege escalation issues in AWS managed policies, he didn't just report them - he built <a href="#" className="text-blue-600 underline">Parliament</a>, a tool to automatically detect these problems. This approach:
+        </p>
+        <ul className="list-disc ml-6 mb-6 space-y-2">
+          <li>Enables automatic detection in CI/CD pipelines</li>
+          <li>Helps others find similar problems in their environments</li>
+          <li>Makes it easier for the vendor to incorporate fixes</li>
+          <li>Provides ongoing value beyond the initial report</li>
+        </ul>
+        <p className="mb-4">
+          AWS eventually incorporated Parliament's functionality into their own services, acknowledging the tool's contribution. As Piper noted, "build a tool" doesn't require a full application - it could be a Yara rule, nuclei template, or semgrep rule.
+        </p>
+
+        <h3 className="text-xl font-medium mt-6 mb-3">Attack from Multiple Angles</h3>
+        <p className="mb-4">
+          For the GitHub Actions OIDC integration vulnerability, Piper addressed the problem from multiple directions:
+        </p>
+        <ul className="list-disc ml-6 mb-6 space-y-2">
+          <li><strong>Root cause</strong>: Got the tutorial author to fix misleading documentation</li>
+          <li><strong>Detection</strong>: Asked AWS to scan all customer environments</li>
+          <li><strong>UI improvement</strong>: Requested better wizards to prevent misconfigurations</li>
+          <li><strong>Vendor coordination</strong>: Worked with HashiCorp on Terraform-related issues</li>
+        </ul>
+        <p className="mb-4">
+          The result? AWS not only implemented the requested changes but went further, completely preventing the vulnerable configuration - a breaking change they don't typically make.
+        </p>
+
+        <h3 className="text-xl font-medium mt-6 mb-3">Don't Be Afraid of Big Asks</h3>
+        <p className="mb-4">
+          Piper's biggest surprise was that AWS implemented the breaking change to completely prevent the vulnerable configuration. His lesson: "Don't be afraid to make those big asks. Don't be afraid to ask somebody to do what you think is the right thing even if you don't think they're actually going to do it."
+        </p>
+
+        <h2 className="text-2xl font-semibold mt-8 mb-4">When Things Go Wrong: The Senator Story</h2>
+        <p className="mb-4">
+          Not all of Piper's approaches were successful. His involvement in the post-Capital One breach discussions with Senator Ron Wyden led to an FTC investigation request that included his redacted security report to AWS. This created what he called "an anti-pattern" - a period where he "was scared of every Amazon van."
+        </p>
+        <p className="mb-4">
+          While this approach had unintended consequences, it did result in AWS becoming much more responsive to security researchers, now guaranteeing 24-hour response times.
+        </p>
+
+        <h2 className="text-2xl font-semibold mt-8 mb-4">The Wall of Shame: Nuclear Option</h2>
+        <p className="mb-4">
+          Frustrated by vendors' slow adoption of IMDSv2, Piper created a public "wall of shame" listing non-compliant vendors. While effective at driving change, he acknowledged this as another anti-pattern, recommending a 90-day disclosure approach instead.
+        </p>
+        <p className="mb-4">
+          However, the wall of shame succeeded because it included constructive guidance for AWS on improving their partner requirements and user interfaces, not just vendor shaming.
+        </p>
+
+        <h2 className="text-2xl font-semibold mt-8 mb-4">Key Takeaways for Security Teams</h2>
+
+        <h3 className="text-xl font-medium mt-6 mb-3">Internal Fixes</h3>
+        <ul className="list-disc ml-6 mb-6 space-y-2">
+          <li>Implement proper ticketing with ownership and metrics</li>
+          <li>Get personally involved in understanding fix processes</li>
+          <li>Focus on strategic solutions that prevent problem recurrence</li>
+          <li>Implement guardrails to stop the bleeding</li>
+          <li>Address root causes in documentation and processes</li>
+        </ul>
+
+        <h3 className="text-xl font-medium mt-6 mb-3">External Influence</h3>
+        <ul className="list-disc ml-6 mb-6 space-y-2">
+          <li>Build tools that enable automatic detection</li>
+          <li>Attack problems from multiple angles</li>
+          <li>Report security issues to security teams, not sales</li>
+          <li>Maintain written records of requests</li>
+          <li>Don't be afraid to make big asks</li>
+          <li>Provide constructive guidance alongside criticism</li>
+        </ul>
+
+        <h2 className="text-2xl font-semibent mt-8 mb-4">The Bigger Picture</h2>
+        <p className="mb-4">
+          Piper's keynote ultimately demonstrated that security professionals can have significant impact beyond their immediate organizations. As he noted in closing: "You can actually get Amazon, a trillion-dollar company, to actually fix things. You can get involved with like a federal investigation. Like don't do that one actually don't... but you can have this impact on the world."
+        </p>
+        <p className="mb-4">
+          The key is moving beyond just finding problems to systematically addressing their root causes, whether internal or external. By improving our own processes first, building tools that enable others, and strategically applying pressure where it's most productive, security teams can create lasting positive change.
+        </p>
+        <p className="mb-4">
+          As Piper concluded: "The world becomes more secure and a better place and everything is good." That's a goal worth working towards, one fixed security issue at a time.
+        </p>
+
+        <div className="bg-gray-50 border-l-4 border-gray-400 p-4 mt-8">
+          <p className="text-sm text-gray-700">
+            <strong>About Scott Piper:</strong> Scott has worked across various roles in security, from the NSA to San Francisco Bay Area tech companies, startups, and security vendors. He's the creator of tools like Parliament and flaws.cloud, and currently works in cloud security. His diverse experience across government, enterprise, and startup environments provides unique insights into security challenges at scale.
+          </p>
+        </div>
+      </>
+    )
+  },
   "pavel-kettlebell-method": {
     title: "The Pavel Method: Kettlebell Training for Strength and Resilience",
     date: "2025-06-10",
@@ -433,14 +600,35 @@ export const BlogPost = () => {
   }, [slug]);
 
   const handleShare = () => {
+    // Add video reference for specific posts
+    const videoReferences: Record<string, string> = {
+      "getting-things-fixed-security-wins-fails": "https://www.youtube.com/watch?v=SXiwyRY6ed4"
+    };
+    
+    const videoUrl = slug ? videoReferences[slug] : null;
+    let shareText = post?.title || '';
+    let shareUrl = window.location.href;
+    
+    if (videoUrl) {
+      shareText += `\n\nWatch the full talk: ${videoUrl}`;
+      // For social media sharing, include both blog and video
+      shareUrl += `\n\nOriginal video: ${videoUrl}`;
+    }
+
     if (navigator.share) {
       navigator.share({
         title: post?.title,
+        text: videoUrl ? `Check out this insightful blog post based on ${post?.title}. Watch the original talk: ${videoUrl}` : undefined,
         url: window.location.href,
       }).catch((error) => console.log('Error sharing', error));
     } else {
-      navigator.clipboard.writeText(window.location.href);
-      alert('Link copied to clipboard!');
+      // For platforms without native sharing, copy enhanced text
+      const copyText = videoUrl 
+        ? `${post?.title}\n\nBlog: ${window.location.href}\nOriginal video: ${videoUrl}`
+        : window.location.href;
+      
+      navigator.clipboard.writeText(copyText);
+      alert(videoUrl ? 'Link and video reference copied to clipboard!' : 'Link copied to clipboard!');
     }
   };
 

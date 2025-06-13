@@ -90,6 +90,17 @@ export const allPosts = [
     slug: "digital-minimalism"
   },
   {
+    id: 9,
+    title: "Getting Things Fixed: Security Wins and Fails from the Trenches",
+    excerpt: "Scott Piper's masterclass keynote on the most challenging aspect of security work: actually getting people to fix the problems you find.",
+    category: "Cloud Security",
+    date: "Jan 15, 2025",
+    readTime: "12 min read",
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=600&fit=crop",
+    featured: true,
+    slug: "getting-things-fixed-security-wins-fails"
+  },
+  {
     id: 8,
     title: "The Pavel Method: Kettlebell Training for Strength and Resilience",
     excerpt: "How kettlebell training based on Pavel Tsatsouline's principles transformed my fitness approach and overall strength.",
