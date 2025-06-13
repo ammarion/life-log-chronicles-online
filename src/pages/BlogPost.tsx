@@ -599,37 +599,46 @@ export const BlogPost = () => {
     window.scrollTo(0, 0);
   }, [slug]);
 
-  const handleShare = () => {
+  const handleShare = (platform?: string) => {
     // Add video reference for specific posts
     const videoReferences: Record<string, string> = {
       "getting-things-fixed-security-wins-fails": "https://www.youtube.com/watch?v=SXiwyRY6ed4"
     };
     
     const videoUrl = slug ? videoReferences[slug] : null;
-    let shareText = post?.title || '';
-    let shareUrl = window.location.href;
+    const currentUrl = window.location.href;
     
-    if (videoUrl) {
-      shareText += `\n\nWatch the full talk: ${videoUrl}`;
-      // For social media sharing, include both blog and video
-      shareUrl += `\n\nOriginal video: ${videoUrl}`;
+    if (platform === 'linkedin') {
+      // LinkedIn sharing with enhanced text
+      const linkedinText = videoUrl 
+        ? `${post?.title}\n\nInsightful analysis based on Scott Piper's BSidesSLC 2025 keynote.\n\nRead the full blog post: ${currentUrl}\n\nWatch the original talk: ${videoUrl}\n\n#CloudSecurity #InfoSec #BSidesSLC #SecurityEngineering`
+        : `${post?.title}\n\nRead more: ${currentUrl}`;
+      
+      const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(currentUrl)}`;
+      window.open(linkedinUrl, '_blank', 'width=600,height=400');
+      
+      // Also copy enhanced text to clipboard for easy pasting
+      navigator.clipboard.writeText(linkedinText);
+      return;
+    }
+    
+    if (platform === 'twitter') {
+      const twitterText = videoUrl 
+        ? `${post?.title}\n\nGreat analysis of @ScottPiper's BSidesSLC keynote on getting security fixes implemented.\n\nBlog: ${currentUrl}\nVideo: ${videoUrl}\n\n#CloudSecurity #InfoSec`
+        : `${post?.title}\n\n${currentUrl}`;
+      
+      const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(twitterText)}`;
+      window.open(twitterUrl, '_blank', 'width=600,height=400');
+      return;
     }
 
-    if (navigator.share) {
-      navigator.share({
-        title: post?.title,
-        text: videoUrl ? `Check out this insightful blog post based on ${post?.title}. Watch the original talk: ${videoUrl}` : undefined,
-        url: window.location.href,
-      }).catch((error) => console.log('Error sharing', error));
-    } else {
-      // For platforms without native sharing, copy enhanced text
-      const copyText = videoUrl 
-        ? `${post?.title}\n\nBlog: ${window.location.href}\nOriginal video: ${videoUrl}`
-        : window.location.href;
-      
-      navigator.clipboard.writeText(copyText);
-      alert(videoUrl ? 'Link and video reference copied to clipboard!' : 'Link copied to clipboard!');
-    }
+    // Default sharing (copy to clipboard with enhanced format)
+    const copyText = videoUrl 
+      ? `${post?.title}\n\nBlog: ${currentUrl}\nOriginal video: ${videoUrl}\n\n#CloudSecurity #InfoSec`
+      : `${post?.title}\n\n${currentUrl}`;
+    
+    navigator.clipboard.writeText(copyText);
+    alert('Content copied to clipboard! Perfect for sharing on LinkedIn or other platforms.');
   };
 
   if (!post) {
@@ -681,15 +690,35 @@ export const BlogPost = () => {
                 </div>
               </div>
               
-              <Button 
-                variant="outline" 
-                size="sm" 
-                className="flex items-center text-gray-600 hover:text-rose-600 transition-colors"
-                onClick={handleShare}
-              >
-                <Share2 className="w-4 h-4 mr-2" />
-                Share Article
-              </Button>
+              <div className="flex flex-wrap gap-2">
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  className="flex items-center text-gray-600 hover:text-blue-600 transition-colors"
+                  onClick={() => handleShare('linkedin')}
+                >
+                  <Share2 className="w-4 h-4 mr-2" />
+                  Share on LinkedIn
+                </Button>
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  className="flex items-center text-gray-600 hover:text-blue-400 transition-colors"
+                  onClick={() => handleShare('twitter')}
+                >
+                  <Share2 className="w-4 h-4 mr-2" />
+                  Share on Twitter
+                </Button>
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  className="flex items-center text-gray-600 hover:text-rose-600 transition-colors"
+                  onClick={() => handleShare()}
+                >
+                  <Share2 className="w-4 h-4 mr-2" />
+                  Copy Link
+                </Button>
+              </div>
             </header>
             
             <div className="prose prose-lg max-w-none prose-headings:font-playfair prose-headings:font-bold prose-a:text-rose-600">
