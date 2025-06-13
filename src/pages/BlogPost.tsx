@@ -597,7 +597,63 @@ export const BlogPost = () => {
   useEffect(() => {
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
-  }, [slug]);
+    
+    // Update meta tags for social sharing
+    if (post) {
+      // Update page title
+      document.title = `${post.title} | Life Chronicles`;
+      
+      // Update Open Graph meta tags
+      const updateMetaTag = (property: string, content: string) => {
+        let meta = document.querySelector(`meta[property="${property}"]`) as HTMLMetaElement;
+        if (!meta) {
+          meta = document.createElement('meta');
+          meta.setAttribute('property', property);
+          document.head.appendChild(meta);
+        }
+        meta.setAttribute('content', content);
+      };
+
+      const updateMetaName = (name: string, content: string) => {
+        let meta = document.querySelector(`meta[name="${name}"]`) as HTMLMetaElement;
+        if (!meta) {
+          meta = document.createElement('meta');
+          meta.setAttribute('name', name);
+          document.head.appendChild(meta);
+        }
+        meta.setAttribute('content', content);
+      };
+
+      // Set blog post specific meta tags
+      updateMetaTag('og:title', post.title);
+      updateMetaTag('og:description', `${post.category} | ${post.readTime} | Read this insightful article on Life Chronicles`);
+      updateMetaTag('og:url', window.location.href);
+      updateMetaTag('og:type', 'article');
+      
+      // Use category-specific images
+      const categoryImages: Record<string, string> = {
+        "Cloud Security": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=630&fit=crop",
+        "Fitness": "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=1200&h=630&fit=crop",
+        "Travel": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200&h=630&fit=crop",
+        "Personal Growth": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=630&fit=crop",
+        "Lifestyle": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1200&h=630&fit=crop"
+      };
+      
+      const imageUrl = categoryImages[post.category] || "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1200&h=630&fit=crop";
+      updateMetaTag('og:image', imageUrl);
+      updateMetaTag('og:image:width', '1200');
+      updateMetaTag('og:image:height', '630');
+      
+      // Twitter meta tags
+      updateMetaName('twitter:title', post.title);
+      updateMetaName('twitter:description', `${post.category} | ${post.readTime} | Read this insightful article on Life Chronicles`);
+      updateMetaName('twitter:image', imageUrl);
+      
+      // Article specific meta tags
+      updateMetaTag('article:published_time', post.date);
+      updateMetaTag('article:section', post.category);
+    }
+  }, [slug, post]);
 
   const handleShare = (platform?: string) => {
     // Add video reference for specific posts
