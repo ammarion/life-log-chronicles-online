@@ -198,6 +198,10 @@ const blogPosts = {
           At BSidesSLC 2025, Scott Piper delivered a keynote that crystallized something many of us have been grappling with: the gap between finding security problems and actually getting them fixed. While his examples were compelling, what struck me wasn't the novelty of his techniques—many of these approaches have been floating around the security community for years—but rather his systematic articulation of why traditional security approaches often fail.
         </p>
 
+        <p className="text-lg mb-6">
+          As someone who has built my career around similar principles—focusing on systematic solutions over heroic fixes, building tools that enable others, and treating security as fundamentally a people problem—I found myself both validating my own approach and identifying areas where I could be more intentional about these practices.
+        </p>
+
         <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
           <p className="text-sm text-blue-800">
             <strong>Watch the full keynote:</strong> <a href="https://www.youtube.com/watch?v=SXiwyRY6ed4" target="_blank" rel="noopener noreferrer" className="underline">BSidesSLC 2025 - Getting Things Fixed by Scott Piper</a>
@@ -313,7 +317,7 @@ const blogPosts = {
 
         <div className="bg-indigo-50 border-l-4 border-indigo-400 p-4 mb-6">
           <p className="text-sm text-indigo-800">
-            <strong>Pattern Recognition:</strong> In my experience, the biggest security wins come not from heroic individual efforts, but from creating systems that make the right thing the easy thing. Every manual process that gets repeated more than ten times should be automated. Every explanation you give more than three times should be documented. Every mistake that happens more than once should be prevented by design.
+            <strong>Pattern Recognition:</strong> This systematic approach has been central to my own security practice for years. The biggest wins come not from heroic individual efforts, but from creating systems that make the right thing the easy thing. Every manual process that gets repeated more than ten times should be automated. Every explanation you give more than three times should be documented. Every mistake that happens more than once should be prevented by design.
           </p>
         </div>
 
