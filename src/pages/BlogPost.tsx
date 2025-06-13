@@ -212,7 +212,7 @@ const blogPosts = {
 
         <div className="bg-amber-50 border-l-4 border-amber-400 p-4 mb-6">
           <p className="text-sm text-amber-800">
-            <strong>Personal Reflection:</strong> In my early career at Adobe, I remember the frustration of identifying critical vulnerabilities only to watch them languish in JIRA tickets for months. It took me years to understand that my technical skills were only half the equation—the other half was learning to navigate human psychology, organizational dynamics, and the delicate art of influence.
+            <strong>Personal Reflection:</strong> In my early career at a large tech company, I remember the frustration of identifying critical vulnerabilities only to watch them languish in JIRA tickets for months. It took me years to understand that my technical skills were only half the equation—the other half was learning to navigate human psychology, organizational dynamics, and the delicate art of influence.
           </p>
         </div>
 
@@ -380,7 +380,7 @@ const blogPosts = {
 
         <div className="bg-rose-50 border-l-4 border-rose-400 p-4 mb-6">
           <p className="text-sm text-rose-800">
-            <strong>Personal Insight:</strong> In my role at Adobe, I've learned that engineering teams often have more appetite for bold solutions than security teams assume. When we frame requests in terms of engineering excellence rather than security compliance, we often find surprising alignment. The key is asking for what we actually want, not what we think we can get.
+            <strong>Personal Insight:</strong> In my experience working with engineering teams, I've learned that they often have more appetite for bold solutions than security teams assume. When we frame requests in terms of engineering excellence rather than security compliance, we often find surprising alignment. The key is asking for what we actually want, not what we think we can get.
           </p>
         </div>
 
