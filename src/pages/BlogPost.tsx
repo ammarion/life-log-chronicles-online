@@ -897,11 +897,24 @@ export const BlogPost = () => {
 
       // Set blog post specific meta tags
       updateMetaTag('og:title', post.title);
-      updateMetaTag('og:description', `${post.category} | ${post.readTime} | Read this insightful article on Life Chronicles`);
+      
+      // Use post-specific descriptions for better social sharing
+      const postDescriptions: Record<string, string> = {
+        "problem-definition-ultimate-security-control": "The most catastrophic security failures aren't failures of technology—they're failures of imagination. Learn why rigorous problem definition is the foundation of effective security engineering.",
+        "getting-things-fixed-security-wins-fails": "Scott Piper's masterclass keynote on the most challenging aspect of security work: actually getting people to fix the problems you find.",
+      };
+      
+      const description = (slug && postDescriptions[slug]) || `${post.category} | ${post.readTime} | Read this insightful article on Life Chronicles`;
+      updateMetaTag('og:description', description);
       updateMetaTag('og:url', window.location.href);
       updateMetaTag('og:type', 'article');
       
-      // Use category-specific images
+      // Use post-specific images first, then fall back to category images
+      const postSpecificImages: Record<string, string> = {
+        "problem-definition-ultimate-security-control": "https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&h=630&fit=crop&q=80", // Strategic planning/problem solving
+        "getting-things-fixed-security-wins-fails": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&h=630&fit=crop&q=80", // Security/network concept
+      };
+      
       const categoryImages: Record<string, string> = {
         "Cloud Security": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=630&fit=crop",
         "Fitness": "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=1200&h=630&fit=crop",
@@ -910,14 +923,14 @@ export const BlogPost = () => {
         "Lifestyle": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1200&h=630&fit=crop"
       };
       
-      const imageUrl = categoryImages[post.category] || "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1200&h=630&fit=crop";
+      const imageUrl = (slug && postSpecificImages[slug]) || categoryImages[post.category] || "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1200&h=630&fit=crop";
       updateMetaTag('og:image', imageUrl);
       updateMetaTag('og:image:width', '1200');
       updateMetaTag('og:image:height', '630');
       
       // Twitter meta tags
       updateMetaName('twitter:title', post.title);
-      updateMetaName('twitter:description', `${post.category} | ${post.readTime} | Read this insightful article on Life Chronicles`);
+      updateMetaName('twitter:description', description);
       updateMetaName('twitter:image', imageUrl);
       
       // Article specific meta tags
