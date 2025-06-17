@@ -7,6 +7,14 @@ const blogPosts = {
     readTime: "12 min read",
     date: "2025-01-20"
   },
+  "security-problem-definition-engineering-control": {
+    title: "Before the First Line of Code: Why Problem Definition is the Ultimate Security Control",
+    description: "The most catastrophic security failures aren't failures of technology—they're failures of imagination. Learn why rigorous problem definition is the foundation of effective security engineering.",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=630&fit=crop&q=80",
+    category: "Cloud Security",
+    readTime: "12 min read",
+    date: "2025-01-20"
+  },
   "getting-things-fixed-security-wins-fails": {
     title: "The Art of Influence: Deeper Reflections on Scott Piper's Mastery of Getting Things Fixed",
     description: "Scott Piper's masterclass keynote on the most challenging aspect of security work: actually getting people to fix the problems you find.",
