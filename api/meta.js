@@ -48,6 +48,7 @@ export default function handler(req, res) {
     <meta property="og:description" content="${post.description}" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="${post.image}" />
+    <meta property="og:image:secure_url" content="${post.image}" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:url" content="https://ammaralim.com/blog/${slug}" />
