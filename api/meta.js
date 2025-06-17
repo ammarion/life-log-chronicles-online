@@ -42,6 +42,20 @@ export default function handler(req, res) {
     return res.redirect(302, '/');
   }
 
+  // Check if this is a bot/crawler request
+  const userAgent = req.headers['user-agent'] || '';
+  const isCrawler = userAgent.toLowerCase().includes('bot') || 
+                   userAgent.toLowerCase().includes('crawler') ||
+                   userAgent.toLowerCase().includes('spider') ||
+                   userAgent.toLowerCase().includes('facebookexternalhit') ||
+                   userAgent.toLowerCase().includes('linkedinbot') ||
+                   userAgent.toLowerCase().includes('twitterbot');
+
+  // If not a crawler, redirect to the main index.html (React will handle routing)
+  if (!isCrawler) {
+    return res.redirect(302, '/?redirect=/post/' + slug);
+  }
+
   // Add cache-busting timestamp to image URLs
   const timestamp = Date.now();
   const imageWithCacheBust = `${post.image}&t=${timestamp}`;
@@ -85,16 +99,6 @@ export default function handler(req, res) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Redirect to React app after meta tags are read -->
-    <script>
-      // Only redirect for real browsers, not crawlers
-      if (navigator.userAgent.indexOf('bot') === -1 && 
-          navigator.userAgent.indexOf('crawler') === -1 &&
-          navigator.userAgent.indexOf('spider') === -1) {
-        window.location.replace('/blog/${slug}');
-      }
-    </script>
   </head>
   <body>
     <div id="root">
