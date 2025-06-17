@@ -101,6 +101,17 @@ export const allPosts = [
     slug: "getting-things-fixed-security-wins-fails"
   },
   {
+    id: 10,
+    title: "Before the First Line of Code: Why Problem Definition is the Ultimate Security Control",
+    excerpt: "The most catastrophic security failures aren't failures of technology—they're failures of imagination. Learn why rigorous problem definition is the foundation of effective security engineering.",
+    category: "Cloud Security",
+    date: "Jan 20, 2025",
+    readTime: "12 min read",
+    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop",
+    featured: true,
+    slug: "problem-definition-ultimate-security-control"
+  },
+  {
     id: 8,
     title: "The Pavel Method: Kettlebell Training for Strength and Resilience",
     excerpt: "How kettlebell training based on Pavel Tsatsouline's principles transformed my fitness approach and overall strength.",
