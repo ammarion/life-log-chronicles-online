@@ -5,6 +5,10 @@
       "destination": "/api/meta?slug=:slug"
     },
     {
+      "source": "/post/:slug",
+      "destination": "/api/meta?slug=:slug"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
