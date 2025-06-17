@@ -617,11 +617,7 @@ const blogPosts = {
           Security is an act of engineering, and the foundation of all great engineering is a deep, unwavering obsession with defining the problem. It is the most powerful control you can deploy. It costs nothing but intellectual rigor, and it is the only way to build security that is not just a cost center, but a durable, strategic advantage.
         </p>
 
-        <div className="bg-gray-100 border-l-4 border-gray-600 p-6 mt-8">
-          <p className="text-base text-gray-700">
-            <strong>Note:</strong> This post has been written in the style and voice of Phil Venables, former CISO of Goldman Sachs and currently VP/CISO at Google Cloud, known for his strategic approach to security leadership and his emphasis on business-aligned security programs.
-          </p>
-        </div>
+
       </>
     )
   },
